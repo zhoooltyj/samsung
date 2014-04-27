@@ -1,5 +1,11 @@
+## download zip file
 
-## first we should check if we already have the unzipped files
+url <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
+setInternet2(TRUE)
+download.file(url, destfile="getdata-projectfiles-UCI HAR Dataset.zip")
+dateDownloaded <- date()
+
+## unzip the file
 
 unzip("getdata-projectfiles-UCI HAR Dataset.zip")
 
@@ -99,11 +105,20 @@ for (i in 1:length(s)) {
         tidy_data <- cbind(tidy_data,subject_y_x[j])
 }
 
+## write the result into the file
         
 write.table(tidy_data, file = "tidy_data_1.txt")
         
-##adding columns in Subsetting
-##adding tables in creating new variables
+## Create a second tidy data set with the average of each variable for each activity and each subject:
 
+## split tidy_data by subject and activity
 
-##Reshaping data for the averages values!!
+d<-split(tidy_data, list(tidy_data$Subject,tidy_data$Activity_Code))
+
+## calculate the average of each variable
+
+l <- lapply(d, function(tidy_data) colMeans(tidy_data[4:21]))
+
+## write the result into the file
+
+write.table(l,file="tidy_data_2.txt")
