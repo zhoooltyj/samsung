@@ -1,6 +1,8 @@
 how it works
 ============
 
+###tidy_data_1
+
 Merge the training and the test sets to create one data set:
 
 * Read the files with subjects
@@ -19,3 +21,11 @@ Extract only the measurements on the mean and standard deviation for each measur
 First find needed columns, then write them into tidy_data.
 
 Write tidy_data into "tidy_data_1.txt"
+
+###tidy_data_2
+
+Create a second tidy data set with the average of each variable for each activity and each subject:
+
+* Split tidy_data by subject and activity
+* Calculate the average of each variable
+* Write the result into the file "tidy_data2.txt"
