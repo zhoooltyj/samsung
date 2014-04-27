@@ -30,10 +30,10 @@ Other columns contain only the measurements on the mean and standard deviation f
 
 ##Data Dictionary (tidy_data_2.txt)
 
-The second tidy data set contains split data. There are the average of each variable for each activity and each subject. 
+The second tidy data set contains split data by subject and activity.
 
-The first number in the column name identifies the subject who performed the activity. Its range is from 1 to 30. 
+The first number in the name of the block identifies the subject who performed the activity. Its range is from 1 to 30. 
 
-The second number in the column name identifies the activity type. Its range is from 1 to 6.
+The second number in the nema of the block identifies the activity type. Its range is from 1 to 6.
 
 Other columns contain only the measurements on the mean and standard deviation for each measurement. There is the average of each variable for each activity and each subject.
